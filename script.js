@@ -108,14 +108,13 @@ function genPlayerCard(p) {
 }
 
 function newGame(){
-  activePlayer = 0
   for (const i of document.querySelectorAll("img")){
     i.faceDown = false
     turnUp(i)
   }
   const [playerCard0New, playerCard1New] = [genPlayerCard(0), genPlayerCard(1)]
-  container.replaceChild(playerCard0New, playerCard0)
-  container.replaceChild(playerCard1New, playerCard1)
+  p0con.replaceChild(playerCard0New, playerCard0)
+  p1con.replaceChild(playerCard1New, playerCard1)
   playerCard0 = playerCard0New
   playerCard1 = playerCard1New
 }
@@ -136,12 +135,22 @@ const btns = document.createElement("div")
 btns.appendChild(newGamebtn)
 btns.appendChild(nextbtn)
 
+const p0con = document.createElement("div")
+p0con.classList.add("container")
+//p0con.style.width = `900px`
+p0con.appendChild(playerCard0)
+p0con.appendChild(playerTable0)
+
+const p1con = document.createElement("div")
+p1con.classList.add("container")
+p1con.appendChild(playerTable1)
+p1con.appendChild(playerCard1)
+
 const container = document.createElement("div")
 container.classList.add("container")
-container.appendChild(playerCard0)
-container.appendChild(playerTable0)
+container.id = "maincontainer"
+container.appendChild(p0con)
 container.appendChild(btns)
-container.appendChild(playerTable1)
-container.appendChild(playerCard1)
+container.appendChild(p1con)
 
 document.body.appendChild(container)
