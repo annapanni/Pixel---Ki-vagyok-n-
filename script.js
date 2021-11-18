@@ -120,39 +120,21 @@ function newGame(){
 }
 
 
-//creating two button + button div
-const nextbtn = document.createElement("button")
-nextbtn.innerText = "Kör vége"
-nextbtn.addEventListener("click", changeActive)
-const newGamebtn = document.createElement("button")
-newGamebtn.innerText = "Új játék"
-newGamebtn.style.fontSize = "12px"
-newGamebtn.addEventListener("click", newGame)
-const btns = document.createElement("div")
-btns.appendChild(newGamebtn)
-btns.appendChild(nextbtn)
+//adding EventListeners to buttons
+document.getElementById("nextBtn")
+  .addEventListener("click", changeActive)
+document.getElementById("newGameBtn")
+  .addEventListener("click", newGame)
 
 //creating cards + tables  for players
 let [playerCard0, playerCard1] = [genPlayerCard(0), genPlayerCard(1)]
 const playerTable0 = genCharTable(0)
 const playerTable1 = genCharTable(1)
 
-//adding cards and players to created divs
-const p0con = document.createElement("div")
-p0con.classList.add("container")
+//adding cards and players to to divs
+const p0con = document.getElementById("p0container")
 p0con.appendChild(playerCard0)
 p0con.appendChild(playerTable0)
-const p1con = document.createElement("div")
-p1con.classList.add("container")
+const p1con = document.getElementById("p1container")
 p1con.appendChild(playerTable1)
 p1con.appendChild(playerCard1)
-
-//adding everythin to the main container
-const container = document.createElement("div")
-container.classList.add("container")
-container.id = "maincontainer"
-container.appendChild(p0con)
-container.appendChild(btns)
-container.appendChild(p1con)
-
-document.body.appendChild(container)
