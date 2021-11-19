@@ -6,13 +6,20 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <button id="helpBtn" type="button" name="leiras">Leírás</button>
     <div class="container" id="maincontainer">
       <div class="container" id="p0container"></div>
       <div id="btns">
-        <button id="newGameBtn"type="button" name="button">Új játék</button>
-        <button id="nextBtn" type="button" name="button">Kör vége</button>
+        <button id="newGameBtn"type="newGame" name="button">Új játék</button>
+        <button id="nextBtn" type="next" name="button">Kör vége</button>
       </div>
       <div class="container" id="p1container"></div>
+    </div>
+    <div id="helpWindow" class="hidden">
+      <button id="closeHelp">×</button>
+      <h3>Ki vagyok én?</h3>
+      <p> Mindkét játékosnak van egy-egy lapja, amelyet ellenfele nem lát (ezek akár egyformák is lehetnek az eredeti játékkal ellentétben). A játékosok feladata az, hogy kitalálják mi a másik rejtett lapja. Ezt úgy tudják megtenni, hogy barkóba-szerűen eldöntendő kérdéseket tesznek fel (pl.: Nő-e az illető? Szemüveges-e?) majd ez alapján "lehajtja", azaz kizárhatja azokat a karaktereket, akik nem biztosan nem szerepelnek a másik játékos által húzott kártyán. Miután a játékos feltett egy kérdést és a megfelelő képekre kattintva kizárt bizonyos szereplőket, a "Kör vége" gombra kattintva átadja az eszközt a másik játékosnak, hogy ő is feltehessen egy kérdést.</p>
+      <p>Mivel a két játékos egy eszközön játszik, így a rejtett lapját mindekinek fejben kell tartania, amíg nincs nála az eszköz, tehát addig, amíg a kérdésre válaszol. Ez azt is jelenti, hogy az első játékos először csak megnézi a lapját, majd helyből befejezi a körét, hisz az ellenfele még nem ismeri a saját lapját.</p>
     </div>
   </body>
   <script type="text/javascript" src="script.js"></script>

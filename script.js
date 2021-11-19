@@ -100,7 +100,7 @@ function genCharTable(p){
 
 function genPlayerCard(p) {
   const pc = document.createElement("img")
-  setCard(pc, Math.floor(Math.random()*24),"borito2.png", p)
+  setCard(pc, Math.floor(Math.random()*24), "borito2.png", p)
   if (p !== activePlayer) pc.classList.add("inactive")
   turnDown(pc)
   pc.faceDown = true
@@ -119,12 +119,21 @@ function newGame(){
   playerCard1 = playerCard1New
 }
 
+function toggleHelp(){
+  document.getElementById("maincontainer").classList.toggle("blurred")
+  document.getElementById("helpBtn").classList.toggle("blurred")
+  document.getElementById("helpWindow").classList.toggle("hidden")
+}
 
 //adding EventListeners to buttons
 document.getElementById("nextBtn")
   .addEventListener("click", changeActive)
 document.getElementById("newGameBtn")
   .addEventListener("click", newGame)
+document.getElementById("helpBtn")
+  .addEventListener("click", toggleHelp)
+document.getElementById("closeHelp")
+  .addEventListener("click", toggleHelp)
 
 //creating cards + tables  for players
 let [playerCard0, playerCard1] = [genPlayerCard(0), genPlayerCard(1)]
