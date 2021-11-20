@@ -1,4 +1,5 @@
-*{font-family: 'Bradley Hand', cursive;}
+*{font-family: 'American Typewriter', serif;}
+body{width: 100%;}
 button {
   display: block;
   background-color: #e7e7e7;
@@ -64,6 +65,8 @@ h2{font-size: 25px}
 }
 
 #helpWindow{
+  box-sizing: border-box;
+  z-index: 2;
   margin: auto;
   width: 40%;
   border: 3px solid gray;
@@ -76,7 +79,17 @@ h2{font-size: 25px}
 }
 
 @media only screen and (max-width: 1870px) {
-  #maincontainer{
-    flex-flow: column nowrap;
+  button,p {font-size: 28px}
+  h2 {font-size: 40px}
+  #newGameBtn {font-size: 20px}
+  #closeHelp {font-size: 40px}
+  #helpWindow{
+    margin: 0px;
+    width: 70%;
+    padding: 35px;
+    left: 15%;
+    right: 15%;
+    top: 10%;
   }
+  #maincontainer{flex-flow: column nowrap;}
 }
